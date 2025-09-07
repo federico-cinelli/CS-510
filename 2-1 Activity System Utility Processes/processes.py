@@ -1,4 +1,6 @@
-#Federico Cinelli
+# Federico Cinelli
+# 2-1 Activity System Utility Processes
+# This script retrieves and displays information about running system processes.
 
 import psutil
 
@@ -10,7 +12,7 @@ def get_processes_info():
             # Append process info as a dictionary
             processes.append(proc.info)
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-            # Skip processes that no longer exist or can't be accessed
+            # Disregard processes that cannot be accessed
             continue
 
     return processes
@@ -19,7 +21,7 @@ def display_processes(processes):
     """
     Displays the process information in a table.
     
-    Argumentss:
+    Arguments:
         processes: List of process information.
     """
     
